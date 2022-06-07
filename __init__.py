@@ -9,9 +9,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-with open('pets/source.json') as f:
+with open(BASE_DIR/'pets/source.json') as f:
 	pets = loads(f.read())
-with open('faq/source.json') as f:
+with open(BASE_DIR/'faq/source.json') as f:
 	faq = loads(f.read())
 
 bird_pet_type = PetType.objects.get(slug='kus')
@@ -35,7 +35,7 @@ for pet in pets:
 	_pet.photo.save(
 		slugify(pet['name'])+str(_pet.id)+'.jpg',
 		UploadedFile(
-			file=open(BASE_DIR/f'pets/images/{slugify(pet['name'])}.jpg','rb')
+			file=open(BASE_DIR/f'pets/images/{slugify(pet["name"])}.jpg','rb')
 		)
 	)
 	_pet.save()
