@@ -29,7 +29,7 @@ for pet in pets:
 		description = pet['content'],
 		special_phone = pet['owner_phone'],
 		special_waphone = pet['owner_phone'],
-		special_owner = pet['owner_name']
+		special_ownername = pet['owner_name']
 	)
 	_pet.save()
 	_pet.photo.save(
