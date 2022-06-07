@@ -26,7 +26,7 @@ for pet in pets:
 		sex = 'male' if 'Erkek' in pet['sex'] else 'female',
 		breed= pet['breed'],
 		city = slugify(pet['city']),
-		content = pet['content'],
+		description = pet['content'],
 		special_phone = pet['owner_phone'],
 		special_waphone = pet['owner_phone'],
 		special_owner = pet['owner_name']
